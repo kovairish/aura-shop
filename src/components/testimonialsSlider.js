@@ -1,5 +1,5 @@
 // src/components/testimonialsSlider.js
-
+import { getAssetPath } from '../utils/path.js';
 export function TestimonialsSlider(testimonials) {
   return `
     <div class="testimonials-slider">
@@ -7,7 +7,7 @@ export function TestimonialsSlider(testimonials) {
         ${testimonials.map((testimonial, index) => `
           <div class="testimonial-slide" data-index="${index}">
             <div class="testimonial-image">
-              <img src="${testimonial.image || testimonial.avatar}" alt="${testimonial.name}">
+              <img src="${getAssetPath(testimonial.image || testimonial.avatar)}" alt="${testimonial.name}">
             </div>
             <div class="testimonial-content">
               <h3 class="testimonial-name">${testimonial.name}</h3>
